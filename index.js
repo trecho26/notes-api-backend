@@ -26,6 +26,13 @@ let notes = [{
     }
 ];
 
+const generateId = () => {
+    const notesIds = notes.map(n => n.id)
+    const maxId = notesIds.length ? Math.max(...notesIds) : 0
+    const newId = maxId + 1
+    return newId
+}
+
 app.get('/', (req, res) => {
     res.json({ message: "Hola mundo" });
 });
@@ -52,7 +59,7 @@ app.post('/api/notes', (req, res) => {
     }
 
     const newNote = {
-        id: notes.length + 1,
+        id: generateId(),
         content: note.content,
         date: new Date().toISOString(),
         important: typeof note.important !== 'undefined' ? note.important : false,
