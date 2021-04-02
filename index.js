@@ -69,5 +69,5 @@ app.delete('/api/notes/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening ${port}`);
+    console.log(`Server app listening ${port}`);
 });
