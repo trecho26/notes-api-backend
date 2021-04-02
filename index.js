@@ -6,7 +6,6 @@ const port = process.env.PORT || 3001;
 app.use(cors);
 app.use(express.json());
 
-
 let notes = [{
         id: 1,
         content: 'HTML is easy',
